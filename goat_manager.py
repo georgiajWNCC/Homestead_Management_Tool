@@ -25,7 +25,7 @@ console = Console()
 # health issues, egg count, and feed consumption functions template. 
 # Create chicken class
 class Goat:
-    def __init__(self, id_number, breed, age, health_issues, weekly_egg_count, feed_consumed):
+    def __init__(self, id_number, breed, age, health_issues, weekly_milk_count, feed_consumed):
         self.id_number = id_number
         self.breed = breed
         self.age = age
