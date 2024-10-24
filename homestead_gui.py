@@ -14,13 +14,14 @@ from rich.panel import Panel
 # --------------------------------- HOMESTEAD GUI CLASS --------------------------- #
 class HomesteadGUI:
     def __init__(self):
-        # Initialize the homestead management system
+        # Initialize the homestead management program
         self.homestead = Homestead()
 
+    # TODO: Method to run gui
     def run(self):
-        # Menu loop for the program
+        # Create while loop for menu program loop 
         while True:
-            # Display menu title using Rich panel for formatting
+            # Display menu title using rich panel for formatting
             console.print(
                 Panel.fit(
                     "\nGEORGIADES HOMESTEAD MANAGEMENT MENU",
@@ -28,7 +29,7 @@ class HomesteadGUI:
                 )
             )
 
-            # Display menu options
+            # Display menu options to user to select from
             print("\nMENU OPTIONS")
             console.print(Panel.fit("1. Add Animal", style="bold green"))
             console.print(Panel.fit("2. Remove Animal", style="bold red"))
@@ -36,19 +37,28 @@ class HomesteadGUI:
             console.print(Panel.fit("4. Generate Report", style="bold yellow"))
             console.print(Panel.fit("5. Exit Program", style="bold magenta"))
 
-            # Prompt user for menu option
+            # Prompt user to select a menu option
+            # Use if-else statement for menu options
             option = input("\nChoose an Option from the Menu: ")
 
+            # Call method to add animal
             if option == '1':
-                self.add_animal()  # Call method to add an animal
+                self.add_animal()  
+            # Call method to remove an animal
             elif option == '2':
-                self.remove_animal()  # Call method to remove an animal
+                self.remove_animal()  
+            # Call method to display the amount of feed consumed
             elif option == '3':
-                self.display_total_feed()  # Call method to display total feed consumed
+                self.display_total_feed() 
+            # Call method to display a report for the animal
             elif option == '4':
-                self.display_report()  # Call method to display the report
+                self.display_report()  
+            # Exit the program and display message to user
+            # break
             elif option == '5':
                 print("Thank you for using the Homestead Management Program!")
-                break  # Exit the program
+                print("Goodbye!")
+                break  
+            # Else, handle any invalid input from the user
             else:
-                print("Invalid option. Please try again.")  # Handle invalid input
+                print("Invalid option. Please try again.") 
