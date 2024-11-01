@@ -5,6 +5,8 @@
     Purpose: Create a python animal class module that tracks
     the breed, age, health, weekly egg production, and feed amount consumed.
 """
+import datetime
+
 # ------------------------------ ANIMAL CLASS -------------------------------------- #
 class Animal:
     # Initialize animal object with parameters given
