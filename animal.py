@@ -2,7 +2,8 @@
     Name: animal.py
     Author: Jonathan Georgiades
     Created: 24 October 2024
-    Purpose: Create a python animal class module that tracks
+    Revised: 12 November 2024
+    Purpose: Create a python 'base' animal class module that tracks
     the breed, age, health, weekly egg production, and feed amount consumed.
 """
 import datetime
@@ -18,6 +19,11 @@ class Animal:
         self.weekly_weight = weekly_weight  # Weekly animal weight
         self.feed_consumed = feed_consumed  # Weekly total feed consumed 
 
+    # TODO: Create Base species method
+    # Used in generate_report() method of Homestead class in homestead.py
+    # and is used in GUI as part of generating a report for the user.
+    def get_species(self):
+        raise NotImplementedError("This method should be implemented by subclasses")
     # TODO: Create getters
     # TODO: Method to get/return ID number
     def get_id_number(self):

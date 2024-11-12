@@ -10,10 +10,10 @@
 # import datetime, to track date/time of health issues, egg production
 # and feed consumption. 
 import datetime
-
+from animal import Animal
 
 # --------------------------------- GOAT CLASS ----------------------------------- #
-class Goat:
+class Goat(Animal):
     # Initialize goat object with parameters given
     def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_milk_collected=0):
         self.id_number = id_number

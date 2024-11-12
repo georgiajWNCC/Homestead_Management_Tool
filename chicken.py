@@ -2,24 +2,24 @@
     Name: chicken.py
     Author: Jonathan Georgiades
     Created: 01 September 2024
-    Edited: 24 October 2024
+    1st Revision: 24 October 2024
+    2nd Revision: 12 November 2024
     Purpose: Create a python chicken module program that tracks
     the breed, age, health, weekly egg production, and feed amount consumed.
 """
 
 import datetime
-
+from animal import Animal
 # ----------------------------- CHICKEN CLASS ----------------------------------- #
-class Chicken:
+class Chicken(Animal):
     # Initialize chicken object with parameters given
     def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_egg_collected=0):
-        self.id_number = id_number
-        self.breed = breed
-        self.age = age
-        self.health_issues = health_issues
-        self.weekly_weight = weekly_weight
-        self.feed_consumed = feed_consumed
+        # Call the parent (Animal) class's constructor if needed
+        super().__init__(id_number, breed, age, health_issues, weekly_weight, feed_consumed)
         self.weekly_egg_collected = weekly_egg_collected
+
+    def get_species(self):
+        return "Chicken"
 
     # TODO: Create getters
     # TODO: Method to get/return id number
@@ -66,3 +66,10 @@ class Chicken:
     # TODO: Method to set weekly egg amount collected
     def set_weekly_egg_collected(self, egg_amount):
         self.weekly_egg_collected = egg_amount
+
+    # Additional methods specific to chickens 
+    # TODO: Method to update weekly egg production
+    def update_weekly_egg_collected(self, new_eggs):
+        """Method to update the amount of eggs collected per week."""
+        self.weekly_egg_collected = new_eggs
+      

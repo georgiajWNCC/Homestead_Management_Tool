@@ -2,26 +2,25 @@
     Name: cow.py
     Author: Jonathan Georgiades
     Created: 26 September 2024
-    Edited: 24 October 2024
+    1st Revision: 24 October 2024
+    2nd Revision: 12 November 2024
     Purpose: Python homesteading cow module that tracks
     the breed, age, health, weekly weight, weekly milk production, and feed amount consumed.
 """
 
 import datetime
-
+from animal import Animal
 # ----------------------------------- COW CLASS --------------------------------------- #
 # TODO: Create cow class
-class Cow:
+class Cow(Animal):
     # Initialize Cow object with parameters
     # def __int__(self, etc..)
-    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_milk_collected=0):
-        self.id_number = id_number
-        self.breed = breed
-        self.age = age
-        self.health_issues = health_issues
-        self.weekly_weight = weekly_weight
-        self.feed_consumed = feed_consumed
+    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_milk_collected):
+        super().__init__(id_number, breed, age, health_issues, weekly_weight, feed_consumed)
         self.weekly_milk_collected = weekly_milk_collected
+
+    def get_species(self):
+        return "Cow"
 
     # TODO: Create getters
     # TODO: Method get/return cow ID number

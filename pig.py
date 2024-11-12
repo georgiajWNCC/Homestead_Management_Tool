@@ -7,19 +7,22 @@
 """
 
 import datetime
-
+from animal import Animal
 # ------------------------------------- PIG CLASS ------------------------------------ #
 
-class Pig:
+class Pig(Animal):
     # Initialize pig object with parameters given
-    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_meat_yield=0):
+    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_meat_collected=0):
         self.id_number = id_number
         self.breed = breed
         self.age = age
         self.health_issues = health_issues
         self.weekly_weight = weekly_weight
         self.feed_consumed = feed_consumed
-        self.weekly_meat_yield = weekly_meat_yield
+        self.weekly_meat_collected = weekly_meat_collected
+    
+    def get_species(self):
+        return "Pig"
 
     # TODO: Create getters
     def get_id_number(self):
@@ -40,8 +43,8 @@ class Pig:
     def get_feed_consumed(self):
         return self.feed_consumed
 
-    def get_weekly_meat_yield(self):
-        return self.weekly_meat_yield
+    def get_weekly_meat_collected(self):
+        return self.weekly_meat_collected
 
     # TODO: Create setters
     def set_health_issues(self, health_issues):
@@ -53,5 +56,5 @@ class Pig:
     def set_feed_consumed(self, feed_consumed):
         self.feed_consumed = feed_consumed
 
-    def set_weekly_meat_yield(self, meat_amount):
-        self.weekly_meat_yield = meat_amount
+    def set_weekly_meat_collected(self, meat_amount):
+        self.weekly_meat_collected = meat_amount

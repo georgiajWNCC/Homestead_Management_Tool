@@ -13,9 +13,9 @@
 # and simpledialog for dialog inputs
 import tkinter as tk  
 from tkinter import messagebox, simpledialog  
-
+import datetime
 # Import animal classes for management program
-from animal import Animal  # Base class for animals
+from animal import Animal
 from cow import Cow
 from sheep import Sheep
 from goat import Goat

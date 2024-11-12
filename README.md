@@ -47,12 +47,18 @@ I. GUI interface (UX Design)
         Create animal classes
         Create GUI framework
     Week 11: GUI and Readme Update
-    Week 13: GUI
+    Week 13: GUI Modification/ Testing and Debugging/ Readme Update
+        Test and Debug Animal Classes
+        Fix Generate Report
+            - Allow user to generate a report for all animals
+        Modify GUI appearance
     Week 15: Project Completion 
 
 ## *SYSTEM DESIGN*
 
-    Utilize Rich for formatting display
+    Utilize Tkinter for GUI formatting
+        -messagebox, for alerts.
+        -simpledialog, for dialog inputs.
     Utilize SQLite3 for database intergration.
     
 
@@ -129,4 +135,4 @@ I. To contribute:
 
     For questions or comments about the Homestead Management Tool Project, please contact Jonathan Georgiades.
 
-## *CONCLUSION*
+## *PROGRAM DESIGN NOTES AND CONCLUSION*

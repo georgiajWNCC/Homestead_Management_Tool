@@ -7,20 +7,23 @@
 """
 
 import datetime
-
+from animal import Animal
 # ------------------------------------------ RABBIT CLASS ------------------------------------------- #
 
-class Rabbit:
+class Rabbit(Animal):
     # Initialize goat object with parameters given
-    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_fur_yield=0):
+    def __init__(self, id_number, breed, age, health_issues, weekly_weight, feed_consumed, weekly_fur_collected=0):
         self.id_number = id_number  # Unique identifier for the rabbit
         self.breed = breed          # Breed of the rabbit
         self.age = age              # Age of the rabbit in years
         self.health_issues = health_issues  # Known health issues (if any)
         self.weekly_weight = weekly_weight  # Weight of the rabbit for the week
         self.feed_consumed = feed_consumed  # Total feed consumed by the rabbit
-        self.weekly_fur_yield = weekly_fur_yield  # Amount of fur collected weekly
+        self.weekly_fur_collected = weekly_fur_collected  # Amount of fur collected weekly
 
+    def get_species(self):
+        return "Rabbit"
+    
     # TODO: Create getters
     def get_id_number(self):
         """Return the unique ID number of the rabbit."""
@@ -46,9 +49,9 @@ class Rabbit:
         """Return the total feed consumed by the rabbit."""
         return self.feed_consumed
 
-    def get_weekly_fur_yield(self):
+    def get_weekly_fur_collected(self):
         """Return the weekly fur yield of the rabbit."""
-        return self.weekly_fur_yield
+        return self.weekly_fur_collected
 
     # TODO: Create setters
     def set_health_issues(self, health_issues):
@@ -65,4 +68,4 @@ class Rabbit:
 
     def set_weekly_fur_yield(self, fur_amount):
         """Update the weekly fur yield of the rabbit."""
-        self.weekly_fur_yield = fur_amount
+        self.weekly_fur_collected = fur_amount
