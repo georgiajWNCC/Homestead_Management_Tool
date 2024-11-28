@@ -2,15 +2,18 @@
     Name: homestead_gui.py
     Author: Jonathan Georgiades
     Created: 31 October 2024
-    Revised: 12 November 2024
+    First Revision: 12 November 2024
+    Second Revision: 28 November 2024
     Purpose: Python gui class module for user interation with main program.
 """
+
 
 # Import tkinter library for GUI
 # Import messagebox for alerts and simpledialog for dialog inputs
 import tkinter as tk  
 from tkinter import messagebox, simpledialog  
-
+# Import the get_weather function from weather_api.py
+from weather_api import get_weather
 # Import the Homestead class from the appropriate module
 from homestead import Homestead
 from cow import Cow
@@ -65,10 +68,34 @@ class HomesteadGUI:
         self.report_button = tk.Button(root, text="Generate Report", command=self.display_report, fg="orange", **button_style)
         self.report_button.pack(pady=5)
 
+        # Add a weather button for get weather function
+        self.weather_button = tk.Button(root, text="Get Weather Update", command=self.display_weather, fg="purple", **button_style)
+        self.weather_button.pack(pady=5)
+
         self.exit_button = tk.Button(root, text="Exit Program", command=self.exit_program, fg="red",**button_style)
         self.exit_button.pack(pady=5)
 
-    # Create method to prompt user to add an animal
+    # Create method to display weather info by calling the get_weather function from weather_api.py
+    def display_weather(self):
+        location = simpledialog.askstring("Weather Data:", "Enter a Location (Example: Scottsbluff, NE, US):")
+        if location:
+            weather_data = get_weather(location)  # Call the function from weather_api.py
+            if isinstance(weather_data, dict):  # Check if the response is successful
+                # Extract the relevant weather data you want to display
+                weather_description = weather_data['weather'][0]['description']
+                temperature = weather_data['main']['temp']
+                humidity = weather_data['main']['humidity']
+                report = f"Weather in {location}:\n" \
+                         f"Description: {weather_description}\n" \
+                         f"Temperature: {temperature}°F\n" \
+                         f"Humidity: {humidity}%"
+                messagebox.showinfo("Weather Report", report)
+            else:
+                messagebox.showerror("Error", weather_data)  # Display an error message if the API request fails
+        else:
+            messagebox.showwarning("No Location", "Please enter a valid location.") # Display an error message if the location is invalid
+
+    
     # Create method to prompt user to add an animal
     def add_animal(self):
         # Get animal type, ID, breed, etc., through dialogs
